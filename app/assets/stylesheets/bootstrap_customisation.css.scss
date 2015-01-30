@@ -1,3 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Russo+One|Black+Ops+One|Raleway);
 
+$body-bg:														#C5E1A5;
+$navbar-default-bg:									#8BC34A;
+$navbar-default-link-color:					#ECF0F1;
+$navbar-default-brand-hover-color:	#000000;
+$font-family-sans-serif:						'Raleway';
+$brand-primary:											#8BC34A;
 
 @import 'bootstrap';
+
+.center {
+	text-align: center;
+}
+
+.navbar-brand {
+	font-family: 'Black Ops One';
+}
