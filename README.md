@@ -1,6 +1,6 @@
-#Let's Compete!
+#Scoreboard
 
 This is my project developed in ruby for a website I'm creating.
-[*Let's Compete!](http://letscompete.(url to be determined))
+[*Scoreboard](http://scoreboard.website)
 
 by [JK Gunnink](http://twitter.com/jgunnink)
