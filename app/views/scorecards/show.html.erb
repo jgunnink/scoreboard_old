@@ -4,6 +4,7 @@
   <strong>Description:</strong>
   <%= @scorecard.description %>
 </p>
-
-<%= link_to 'Edit', edit_scorecard_path(@scorecard) %> |
+<% if @scorecard.user == current_user %>
+	<%= link_to 'Edit', edit_scorecard_path(@scorecard) %> |
+<% end %>
 <%= link_to 'Back', scorecards_path %>
