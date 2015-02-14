@@ -4,7 +4,7 @@ class ScorecardsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @scorecards = Scorecard.all
+    @scorecards = Scorecard.all.order("created_at DESC")
   end
 
   def show

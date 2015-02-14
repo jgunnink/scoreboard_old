@@ -1,10 +1,16 @@
-<%= image_tag @scorecard.image.url(:medium) %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @scorecard.description %>
-</p>
-<% if @scorecard.user == current_user %>
-	<%= link_to 'Edit', edit_scorecard_path(@scorecard) %> |
-<% end %>
-<%= link_to 'Back', scorecards_path %>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading text-center">
+				<%= image_tag @scorecard.image.url(:medium) %>
+			</div>
+		<div class="panel-body">
+			<p>Description: <%= @scorecard.description %></p>
+			<p><strong><%= @scorecard.user.email if @scorecard.user %></strong></p>
+			<%= link_to edit_scorecard_path(@scorecard) do %>
+            <span class="glyphicon glyphicon-edit"></span> Edit | 
+          <% end %>
+			<%= link_to 'Go Back', scorecards_path %>
+		</div>
+	</div>
+</div>
