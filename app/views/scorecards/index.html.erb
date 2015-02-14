@@ -8,7 +8,7 @@
     <%= link_to image_tag(scorecard.image.url(:medium)), scorecard %>
     <div class="panel-body">
       <p><%= scorecard.description %></p>
-      <p><strong><%= scorecard.user.email %></strong></p>
+      <p><strong><%= scorecard.user.name %></strong></p>
       <% if scorecard.user == current_user %>
         <div class="actions">
           <%= link_to edit_scorecard_path(scorecard) do %>

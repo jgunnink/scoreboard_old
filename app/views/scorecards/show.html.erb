@@ -6,7 +6,7 @@
 			</div>
 		<div class="panel-body">
 			<p>Description: <%= @scorecard.description %></p>
-			<p><strong><%= @scorecard.user.email if @scorecard.user %></strong></p>
+			<p><strong><%= @scorecard.user.name if @scorecard.user %></strong></p>
 			<%= link_to edit_scorecard_path(@scorecard) do %>
             <span class="glyphicon glyphicon-edit"></span> Edit | 
           <% end %>
