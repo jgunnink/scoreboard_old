@@ -1,34 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Scorecards</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @scorecards.each do |scorecard| %>
-      <tr>
-        <td><%= image_tag scorecard.image.url(:thumb) %></td>
-        <td><%= scorecard.description %></td>
-        <td><%= scorecard.user.email %></td>
-        <td><%= link_to 'Show', scorecard %></td>
-        <% if scorecard.user == current_user %>
-          <td><%= link_to 'Edit', edit_scorecard_path(scorecard) %></td>
-          <td><%= link_to 'Delete', scorecard, method: :delete, data: { confirm: "Are you sure? You can't get it back!" } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 <% if user_signed_in? %>
   <%= link_to 'New Scorecard', new_scorecard_path %>
 <% end %>
+
+<div id="scorecards" class="transitions-enabled">
+  <% @scorecards.each do |scorecard| %>
+  <div class="box panel panel-default">
+    <%= image_tag scorecard.image.url(:medium) %>
+    <div class="panel-body">
+      <%= scorecard.description %>
+      <%= scorecard.user.email %>
+      <%= link_to 'Show', scorecard %>
+      <% if scorecard.user == current_user %>
+        <%= link_to 'Edit', edit_scorecard_path(scorecard) %>
+        <%= link_to 'Delete', scorecard, method: :delete, data: { confirm: "Are you sure? You can't get it back!" } %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
