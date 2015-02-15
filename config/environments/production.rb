@@ -79,7 +79,21 @@ Rails.application.configure do
 
   #required for heroku
   #note to set this to your actual host
-  config.action_mailer.default_url_options = { host: 'scoreboard.website', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'scoreboardwebsite.herokuapp.com', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: ENV["GMAIL_DOMAIN"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
 
   # sets paperclip to upload images to amazon s3
   config.paperclip_defaults = {
