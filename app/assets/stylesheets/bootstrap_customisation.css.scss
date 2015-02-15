@@ -1,14 +1,18 @@
 @import "bootstrap-sprockets";
-@import url(//fonts.googleapis.com/css?family=Russo+One|Black+Ops+One|Raleway);
+@import url(//fonts.googleapis.com/css?family=Russo+One|Black+Ops+One|Lato:200,300,600);
 
 $body-bg:														#80CBC4;
 $navbar-default-bg:									#009688;
 $navbar-default-link-color:					#ECF0F1;
 $navbar-default-brand-hover-color:	#000000;
-$font-family-sans-serif:						'Raleway';
+$font-family-sans-serif:						'Lato';
 $brand-primary:											#009688;
 
 @import 'bootstrap';
+
+.hidden { 
+	display: none;
+}
 
 .center {
 	text-align: left;
@@ -16,4 +20,16 @@ $brand-primary:											#009688;
 
 .navbar-brand {
 	font-family: 'Black Ops One';
+}
+
+.panel {
+	border-radius: 0px;
+}
+
+.navbar {
+	border-radius: 0px;
+}
+
+.btn {
+    border-radius: 0px;
 }

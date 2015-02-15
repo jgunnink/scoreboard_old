@@ -35,7 +35,7 @@
     <hr>
     <h3>Cancel my account</h3>
 
-    <p>If you no longer want to be part of Scoreboard, you can cancel your account.<br><u>Note:</u> this is permanent. Once an account is deleted, it cannot be recovered.<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Last chance, are you sure you want to cancel? This cannot be undone." }, :method => :delete, class: "btn btn-warning" %></p>
+    <p>If you no longer want to be part of Scoreboard, you can cancel your account.<br><u>Note:</u> this is permanent. Once an account is deleted, it cannot be recovered.<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Last chance, are you sure you want to cancel? This cannot be undone." }, :method => :delete, class: "btn btn-danger" %></p>
   </div>
   <div class="panel-footer">
     <%= link_to "Back", :back %>
