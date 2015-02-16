@@ -27,6 +27,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'aws-sdk-v1'
 gem 'masonry-rails'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

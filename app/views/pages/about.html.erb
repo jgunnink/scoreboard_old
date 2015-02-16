@@ -3,7 +3,7 @@
   	Scoreboard is a website for people to record and track scores from the games they play. From local sports teams to card nights, computer games, dice games. If it can be scored, you can put it on the scoreboard.
   </p>
 <% if user_signed_in? %>
-	<%= render "pages/contactform" %>
+
 <% else %>
   <p><div class="text-center">
   	<%= link_to "Join", new_user_registration_path, class: "btn btn-default btn-lg" %>
