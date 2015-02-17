@@ -5,7 +5,7 @@
 <div id="scorecards" class="transitions-enabled">
   <% @scorecards.each do |scorecard| %>
   <div class="box panel panel-default">
-    <%= link_to image_tag(scorecard.image.url(:medium)), scorecard %>
+    <%#= link_to image_tag(scorecard.image.url(:medium)), scorecard %>
     <div class="panel-body">
       <p><%= scorecard.description %></p>
       <p><strong><%= scorecard.user.name %></strong></p>
