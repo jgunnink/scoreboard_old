@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <div class="panel-title">
-      <h3>Edit <%= resource_name.to_s.humanize %></h3>
+      <h3>Edit your account</h3>
     </div>
   </div>
   <div class="panel-body">
@@ -16,6 +16,7 @@
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, class: "form-control", disabled:true %>
+        <small> Note: this cannot be changed here.</small>
       </div>
 
       <div class="form-group">
@@ -29,13 +30,14 @@
       </div>
 
       <div class="form-group">
-        <%= f.submit "Update", class: "btn btn-primary" %>
+        <p><strong>Update your profile picture</strong></p>
+        <div class "media media-left"><%= image_tag @user.avatar.url(:small) %></div>
+        <%= f.file_field :avatar %>
+        <%= f.check_box :remove_avatar %><%= f.label :remove_avatar, "Remove Profile Picture?" %>
       </div>
 
       <div class="form-group">
-        <p>Update your profile picture</p>
-        <%= f.file_field :avatar %>
-        <%= image_tag @user.avatar.url(:small) %>
+        <%= f.submit "Update", class: "btn btn-primary" %>
       </div>
 
     <% end %>

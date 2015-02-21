@@ -1,11 +1,11 @@
 @import "bootstrap-sprockets";
-@import url(//fonts.googleapis.com/css?family=Russo+One|Black+Ops+One|Lato:200,300,600);
+@import url(//fonts.googleapis.com/css?family=Russo+One|Black+Ops+One|Raleway:200,300,600);
 
 $body-bg:														#80CBC4;
 $navbar-default-bg:									#009688;
 $navbar-default-link-color:					#ECF0F1;
 $navbar-default-brand-hover-color:	#000000;
-$font-family-sans-serif:						'Lato';
+$font-family-sans-serif:						'Raleway';
 $brand-primary:											#009688;
 
 @import 'bootstrap';
@@ -32,4 +32,8 @@ $brand-primary:											#009688;
 
 .btn {
     border-radius: 0px;
+}
+
+.small {
+	text-size: 10;
 }
