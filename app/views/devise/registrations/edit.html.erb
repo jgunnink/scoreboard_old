@@ -4,37 +4,42 @@
       <h3>Edit your account</h3>
     </div>
   </div>
-  <div class="panel-body">
+  <div class="panel-body container-fluid">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { :method => :put, multipart: true }) do |f| %>
       <%= devise_error_messages! %>
 
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: "form-control", :autofocus => true %>
-      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control", :autofocus => true %>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", disabled:true %>
-        <small> Note: this cannot be changed here.</small>
-      </div>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, class: "form-control", disabled:true %>
+            <small> Note: this cannot be changed yet.</small>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
+          <div class="form-group">
+            <%= f.label :password, "Change your password" %> <i>(leave blank if you don't want to change it)</i>
+            <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <p><strong>Update your profile picture</strong></p>
+            <div class "media media-left"><%= image_tag @user.avatar.url(:small) %></div>
+            <p></p><%= f.file_field :avatar %><br>
+            <div class="well well-sm"><%= f.check_box :remove_avatar %>  <%= f.label :remove_avatar, "Delete profile picture?" %></div>
+          </div>
+        </div>
       </div>
-
+      <hr>
       <div class="form-group">
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
         <%= f.password_field :current_password, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <p><strong>Update your profile picture</strong></p>
-        <div class "media media-left"><%= image_tag @user.avatar.url(:small) %></div>
-        <%= f.file_field :avatar %>
-        <%= f.check_box :remove_avatar %><%= f.label :remove_avatar, "Remove Profile Picture?" %>
-      </div>
+      </div>      
 
       <div class="form-group">
         <%= f.submit "Update", class: "btn btn-primary" %>
@@ -47,6 +52,7 @@
 
     <p>If you no longer want to be part of Scoreboard, you can cancel your account.<br><u>Note:</u> this is permanent. Once an account is deleted, it cannot be recovered.<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Last chance, are you sure you want to cancel? This cannot be undone." }, :method => :delete, class: "btn btn-danger" %></p>
   </div>
+        </div>
   <div class="panel-footer">
     <%= link_to "Back", :back %>
   </div>
