@@ -79,7 +79,7 @@ Rails.application.configure do
 
   #required for heroku
   #note to set this to your actual host
-  config.action_mailer.default_url_options = { host: 'scoreboardwebsite.herokuapp.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'scoreboardwebsite.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
