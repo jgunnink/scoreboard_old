@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
 
  	validates :name, presence: true
 
+ 	after_create :send_notification
+ 	def send_notification
+ 		AdminMailer.new_user(self).deliver
+ 	end
+
  	has_attached_file :avatar, dependent: :destroy, :styles => { :medium => "300x300>", :small => "100x100>", :thumb => "50x50" }, :default_url => "/images/:style/missing.jpg"
  	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
