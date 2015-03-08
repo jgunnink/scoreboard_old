@@ -53,5 +53,5 @@ class ScorecardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scorecard_params
-      params.require(:scorecard).permit(:description, :image)
+      params.require(:scorecard).permit(:description, :gametype, :playername, :rounds, :number_of_players, :location)
     end

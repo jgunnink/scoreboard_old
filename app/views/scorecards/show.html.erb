@@ -4,8 +4,9 @@
 			<div class="panel-heading">
 				<h2><%= @scorecard.description %></h2>
 			</div>
-		<div class="panel-body text-center">
-			<p>Scorecard Data goes here</p>
+		<div class="panel-body">
+			<p>Body of the Scorecard in here</p>
+			<p><%= @scorecard.playername %></p>
 		</div>
 		<div class="panel-footer">
 			<p><strong><%= @scorecard.user.name if @scorecard.user %></strong></p>

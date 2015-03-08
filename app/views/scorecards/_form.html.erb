@@ -13,9 +13,18 @@
 
   <div class="panel-body">
     <div class="form-group">
-      <%= f.label :description %>
+      <%= f.label :gametype, "Game" %>
+      <%= f.text_field :gametype, class: "form-control", required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :number_of_players, "How many players or teams in this game?" %> <i>(Digits only eg: 4)</i>
+      <%= f.text_field :number_of_players, class: "form-control", required: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, "Describe this Scorecard" %>
       <%= f.text_field :description, class: "form-control" %>
     </div>
     <div class="form-group">
       <%= f.submit class: "btn btn-primary" %>
+      <%= button_to "Go Back", :back, class: "btn btn-warning" %>
 <% end %>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :scorecards
 
   devise_for :users
-  root 'pages#home'
+  root 'scorecards#index'
   get 'about' => 'pages#about'
 
   match '/contacts',     to: 'contacts#new',             via: 'get'
