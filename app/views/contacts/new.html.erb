@@ -1,16 +1,31 @@
-<div class="panel panel-default" align="center">
-  <h3>Send A message to Us</h3>
-
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %>
-    <div class= "hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+<div class="panel panel-default">
+  <div class="panel-heading"><h3>Feedback</h3></div>
+  <div class="panel-body">
+    <%= simple_form_for @contact do |f| %>
+      <div class="form-group">
+        <%= f.label "Name" %>
+        <%= f.text_field :name, required: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Email (enter only if you require a response)" %>
+        <%= f.email_field :email, required: false, class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.label "What's your feedback?" %>
+      <%= f.text_area :message, required: true, class: "form-control", size: "1x3" %>
+      </div>
+      <div class= "hidden">
+        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+      </div>
+      <div>
+        </br>
+        <%= f.submit 'Send message', class: "btn btn-primary" %>
+      </div>
     </div>
-    <div>
-      </br>
-      <%= f.button :submit, 'Send message', class: "btn btn-primary" %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to "Go Back", :back %><br>
+    <%= link_to "Home", :root %>
+  </div>
 </div>

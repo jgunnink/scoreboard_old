@@ -7,7 +7,7 @@ class Contact < MailForm::Base
 	# Declare the email headers. It accepts anything the mail method in ActionMailer accepts.
 	def headers
 		{
-			subject: "My Contact Form",
+			subject: "Scoreboard Feedback",
 			to: "jgunnink@gmail.com",
 			from: %("#{name}" <#{email}>)
 		}
