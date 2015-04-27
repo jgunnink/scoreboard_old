@@ -42,11 +42,11 @@ $brand-primary:											#009688;
 	display: none; 
 }
 
-.table-striped {
+.table-hover {
 	background-color: white;
 }
 
-.wh3 {
-	text-color: white;
-	text-size: 16px;
+th {
+	background-color: #009688;
+	color: white;
 }

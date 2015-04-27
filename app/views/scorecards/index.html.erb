@@ -4,17 +4,19 @@
   <div class="panel panel-heading">
       <%= link_to 'New Scorecard', new_scorecard_path, class: "btn btn-primary" %> 
       <%= link_to 'My Scorecards', new_scorecard_path, class: "btn btn-default" %> 
-      <%= link_to 'Leave Feedback', contacts_path, class: "btn btn-success" %>
+      <%= link_to 'Leave Feedback', contacts_path, class: "btn btn-warning" %>
   </div>
   <div id="scorecards">
-    <table class="table table-striped">
-      Recent Scorecards:
-      <tr>  
-          <th>Game played</th>
-          <th>Description</th>
-          <th>Posted by</th>
-          <th>Actions</th>
-        </tr>
+    <table class="table table-hover">
+      <h3>Recent Scorecards:</h3>
+        <thead>
+          <tr>  
+            <th>Game played</th>
+            <th>Description</th>
+            <th>Posted by</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
       <% @scorecards.each do |scorecard| %>
         <%#= link_to image_tag(scorecard.image.url(:medium)), scorecard %>
         <tr>
