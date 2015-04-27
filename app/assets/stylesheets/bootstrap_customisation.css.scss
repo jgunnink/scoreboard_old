@@ -15,7 +15,7 @@ $brand-primary:											#009688;
 }
 
 .center {
-	text-align: left;
+	text-align: center;
 }
 
 .navbar-brand {
@@ -40,4 +40,13 @@ $brand-primary:											#009688;
 
 .hidden { 
 	display: none; 
+}
+
+.table-striped {
+	background-color: white;
+}
+
+.wh3 {
+	text-color: white;
+	text-size: 16px;
 }

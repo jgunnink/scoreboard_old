@@ -7,28 +7,38 @@
       <%= link_to 'Leave Feedback', contacts_path, class: "btn btn-success" %>
   </div>
   <div id="scorecards">
-    <p>Recent Scorecards:</p><% @scorecards.each do |scorecard| %>
-    <div class="box panel panel-default">
-      <%#= link_to image_tag(scorecard.image.url(:medium)), scorecard %>
-      <div class="panel-body">
-        <p>Game played: <b><%= scorecard.gametype %></b></p>
-        <p><%= scorecard.description %></p>
-        <p>Posted by: <strong><%= scorecard.user.name %></strong></p>
-        <%= link_to scorecard_path(scorecard) do %>
-          <span class="glyphicon glyphicon-eye-open"></span> View Scorecard
-          <% end %><br>
-        <% if scorecard.user == current_user %>
-          <div class="actions">
-            <%= link_to edit_scorecard_path(scorecard) do %>
-              <span class="glyphicon glyphicon-edit"></span> Edit
-            <% end %><br>
-            <%= link_to scorecard, method: :delete, data: { confirm: "Are you sure? You can't get it back!" } do %>
-              <span class="glyphicon glyphicon-trash"></span> Delete
-              <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+    <table class="table table-striped">
+      Recent Scorecards:
+      <tr>  
+          <th>Game played</th>
+          <th>Description</th>
+          <th>Posted by</th>
+          <th>Actions</th>
+        </tr>
+      <% @scorecards.each do |scorecard| %>
+        <%#= link_to image_tag(scorecard.image.url(:medium)), scorecard %>
+        <tr>
+          <td><%= scorecard.gametype %></td>
+          <td><%= scorecard.description %></td>
+          <td><%= scorecard.user.name %></td>
+          <td>
+            <%= link_to scorecard_path(scorecard) do %>
+              <span class="glyphicon glyphicon-eye-open"></span> View Scorecard
+            <% end %>
+            <br>
+            <% if scorecard.user == current_user %>
+              <div class="actions">
+                <%= link_to edit_scorecard_path(scorecard) do %>
+                  <span class="glyphicon glyphicon-edit"></span> Edit
+                <% end %><br>
+                <%= link_to scorecard, method: :delete, data: { confirm: "Are you sure? You can't get it back!" } do %>
+                  <span class="glyphicon glyphicon-trash"></span> Delete
+                <% end %>
+              </div>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
 <% end %>
 </div>
