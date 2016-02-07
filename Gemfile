@@ -8,7 +8,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'paranoia'
 gem 'pg'
-gem 'rails_sort'
+gem 'rails_sort', github: "thefrontiergroup/rails_sort"
 
 
 # Authentication & Authorization
