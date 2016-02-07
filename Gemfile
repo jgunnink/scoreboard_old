@@ -8,7 +8,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'paranoia'
 gem 'pg'
-gem 'rails_sort', github: "thefrontiergroup/rails_sort"
+gem 'rails_sort'
 
 
 # Authentication & Authorization
@@ -45,7 +45,6 @@ group :development do
   gem 'letter_opener'
   gem 'quiet_assets'
   gem 'seed_helper'
-  gem 'tfg_cap', git: 'git@github.com:thefrontiergroup/tfg-cap.git', require: nil
   gem 'web-console'
 end
 

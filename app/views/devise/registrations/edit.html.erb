@@ -26,14 +26,6 @@
             <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <p><strong>Update your profile picture</strong></p>
-            <div class "media media-left"><%= image_tag @user.avatar.url(:small) %></div>
-            <p></p><%= f.file_field :avatar %><br>
-            <div class="well well-sm"><%= f.check_box :remove_avatar %>  <%= f.label :remove_avatar, "Delete profile picture?" %></div>
-          </div>
-        </div>
       </div>
       <hr>
       <div class="form-group">
@@ -50,7 +42,13 @@
       <hr>
     <h3>Cancel my account</h3>
 
-    <p>If you no longer want to be part of Scoreboard, you can cancel your account.<br><u>Note:</u> this is permanent. Once an account is deleted, it cannot be recovered.<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Last chance, are you sure you want to cancel? This cannot be undone." }, :method => :delete, class: "btn btn-danger" %></p>
+    <div class="col-md-6">
+      <p>If you no longer want to be part of Scoreboard, you can cancel your account.
+        <br>
+        <u>Note:</u> this is permanent. Once an account is deleted, it cannot be recovered. 
+        All your scorecards will also be deleted.
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { :confirm => "Last chance, are you sure you want to cancel? This cannot be undone." }, :method => :delete, class: "btn btn-danger" %></p>
+      </div>
   </div>
         </div>
   <div class="panel-footer">
