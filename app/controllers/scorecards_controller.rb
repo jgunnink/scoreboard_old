@@ -41,7 +41,7 @@ class ScorecardsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_scorecard
       @scorecard = Scorecard.find(params[:id])
     end
@@ -51,7 +51,6 @@ class ScorecardsController < ApplicationController
       redirect_to scorecards_path, notice: "Not allowed to edit someone else's Scorecard!" if @scorecard.nil?
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def scorecard_params
       params.require(:scorecard).permit(:description, :gametype, :playername, :rounds, :number_of_players, :location)
     end
