@@ -1,3 +1,20 @@
+GIT
+  remote: git://github.com/thefrontiergroup/rails_sort.git
+  revision: 1ffd4b7671879538207555b6a8d4725e9851adfb
+  specs:
+    rails_sort (1.0.0)
+
+GIT
+  remote: git@github.com:thefrontiergroup/tfg-cap.git
+  revision: ca2de55683119e63f4693e13460c47b0a843f2ae
+  specs:
+    tfg_cap (0.7.11)
+      capistrano (~> 2.6.0)
+      capistrano_colors
+      colored
+      rvm-capistrano (>= 0, < 1.3)
+      version_sorter (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,6 +53,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.0)
     autoprefixer-rails (5.1.5)
       execjs
@@ -53,6 +71,10 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.3)
@@ -63,10 +85,30 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.5)
-      climate_control (>= 0.0.3, < 1.0)
+    cancancan (1.13.1)
+    capistrano (2.6.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capistrano_colors (0.5.5)
+    capybara (2.6.2)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    capybara-screenshot (1.0.11)
+      capybara (>= 1.0, < 3)
+      launchy
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -74,7 +116,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.0)
+    colored (1.2)
+    colorize (0.7.7)
     columnize (0.9.0)
+    database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -84,15 +129,29 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
+    docile (1.1.5)
     dotenv (1.0.2)
+    email_spec (2.0.0)
+      htmlentities (~> 4.3.3)
+      launchy (~> 2.1)
+      mail (~> 2.6.3)
     erubis (2.7.0)
     execjs (2.3.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.6.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
+    ffaker (2.2.0)
     foreman (0.77.0)
       dotenv (~> 1.0.2)
       thor (~> 0.19.1)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    highline (1.7.8)
     hike (1.2.3)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     jbuilder (2.2.7)
       activesupport (>= 3.0.0, < 5)
@@ -107,6 +166,10 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.2)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -117,19 +180,26 @@ GEM
     masonry-rails (0.2.4)
       railties
     mime-types (2.4.3)
+    mini_magick (4.4.0)
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.0.2)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
-    paperclip (4.2.1)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
+    paranoia (2.1.5)
+      activerecord (~> 4.0)
     pg (0.18.1)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -167,6 +237,28 @@ GEM
       json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rspec-core (3.4.2)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.2)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    rspec_junit_formatter (0.2.3)
+      builder (< 4)
+      rspec-core (>= 2, < 4, != 2.12.0)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sass (3.4.12)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -177,11 +269,22 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed_helper (1.8.0)
+      colorize (~> 0.7.5)
+      rake (>= 10.0.0)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
+    simplecov-rcov (0.2.3)
+      simplecov (>= 0.4.1)
     slop (3.6.0)
-    spring (1.3.2)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -191,7 +294,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -202,6 +304,7 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    version_sorter (2.0.0)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.0.0)
@@ -209,6 +312,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -216,25 +321,46 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   aws-sdk-v1
+  better_errors
   bootstrap-sass
   byebug
+  cancancan
+  capybara
+  capybara-screenshot
+  carrierwave
   coffee-rails (~> 4.1.0)
+  database_cleaner
   devise
+  email_spec
+  factory_girl_rails
+  ffaker
   foreman
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  letter_opener
   mail_form
   masonry-rails
-  paperclip
+  mini_magick
+  paranoia
   pg
-  rails (= 4.2.0)
+  quiet_assets
+  rails
   rails_12factor
+  rails_sort!
+  rspec-rails
+  rspec_junit_formatter
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  seed_helper
+  shoulda-matchers (~> 2.8.0)
   simple_form
-  spring
-  sqlite3
+  simplecov
+  simplecov-rcov
+  tfg_cap!
   turbolinks
   uglifier (>= 1.3.0)
-  web-console (~> 2.0)
+  web-console
+
+BUNDLED WITH
+   1.11.2
