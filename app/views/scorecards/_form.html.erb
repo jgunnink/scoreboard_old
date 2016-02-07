@@ -1,8 +1,7 @@
 <%= form_for @scorecard, html: { nmultipart: true } do |f| %>
 <% if @scorecard.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@scorecard.errors.count, "error") %> stopped this scorecard from being saved:</h2>
-
+    <h3><%= pluralize(@scorecard.errors.count, "error") %> stopped this scorecard from being saved:</h3>
     <ul>
     <% @scorecard.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -11,9 +10,10 @@
   </div>
 <% end %>
 
+  
   <div class="panel-body">
     <div class="form-group">
-      <%= f.label :gametype, "Game" %>
+      <%= f.label :gametype, "What game are you playing" %>
       <%= f.text_field :gametype, class: "form-control", required: true %>
     </div>
     <div class="form-group">
@@ -25,6 +25,12 @@
       <%= f.text_field :description, class: "form-control" %>
     </div>
     <div class="form-group">
+      <%= f.label :location, "Where are you playing? (Optional)" %>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+    <div class="form-group">
       <%= f.submit class: "btn btn-primary" %>
       <%= button_to "Go Back", :back, class: "btn btn-warning" %>
+    </div>
+  </div>
 <% end %>
