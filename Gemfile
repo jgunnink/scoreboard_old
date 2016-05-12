@@ -8,7 +8,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'paranoia'
 gem 'pg'
-gem 'rails_sort', github: "thefrontiergroup/rails_sort"
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 
 # Authentication & Authorization
@@ -37,6 +37,7 @@ gem 'aws-sdk-v1'
 gem 'masonry-rails'
 gem 'simple_form'
 gem 'mail_form'
+gem 'haml'
 
 gem 'bootstrap-sass'
 

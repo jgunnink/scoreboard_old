@@ -7,8 +7,8 @@ base: &base
 development:
   <<: *base
   database: scoreboard_development
-  username: develop
-  password: develop
+  username: postgres
+  password: password
 
 test:
   <<: *base
