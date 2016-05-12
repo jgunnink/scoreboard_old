@@ -1,0 +1,8 @@
+.panel.panel-default
+  .panel-heading
+    %h3 Edit Scorecard
+    = render 'form'
+  .panel-footer
+    = link_to 'Show', @scorecard
+    |
+    = link_to 'Back', scorecards_path
