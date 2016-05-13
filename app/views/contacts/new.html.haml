@@ -1,0 +1,30 @@
+.panel.panel-default
+  .panel-heading.text-center
+    %h3 Feedback
+  - if user_signed_in?
+    .panel.panel-body
+      %p Scoreboard welcomes your feedback as a BETA tester.
+      = simple_form_for @contact do |f|
+        .form-group
+          = f.label "Name"
+          = f.text_field :name, required: true, class: "form-control"
+        .form-group
+          = f.label "Email"
+          = f.email_field :email, required: true, class: "form-control"
+        .form-group
+          = f.label "What's your feedback?"
+          = f.text_area :message, required: true, class: "form-control", size: "1x3", placeholder: "Leave a comment..."
+        .hidden
+          = f.input :nickname, hint: 'Leave this field blank!'
+        = f.submit 'Send message', class: "btn btn-primary"
+  - else
+    .panel.panel-body.text-center
+      %br
+      %p To see this page, you must be signed in!
+      %p
+        = link_to "Join", new_user_registration_path, class: "btn btn-default"
+        = link_to "Log In", new_user_session_path, class: "btn btn-primary"
+  .panel-footer
+    = link_to "Go Back", :back
+    %br
+    = link_to "Home", :root

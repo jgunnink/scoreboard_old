@@ -1,0 +1,13 @@
+.jumbotron.center
+  %h1 Welcome, competitor!
+  - if user_signed_in?
+    You're signed in!
+  - else
+    %p
+      This place is for competitions, games, scoring, and keeping track of the competitions
+      %u you're
+      interested in.
+    %p
+    .text-center
+      = link_to "Join", new_user_registration_path, class: "btn btn-default btn-lg"
+      = link_to "Log In", new_user_session_path, class: "btn btn-primary btn-lg"

@@ -1,0 +1,36 @@
+= render 'pages/home' unless user_signed_in?
+.panel.panel-heading
+  = link_to 'New Scorecard', new_scorecard_path, class: "btn btn-primary"
+  = link_to 'My Scorecards', new_scorecard_path, class: "btn btn-default"
+  = link_to 'Leave Feedback', contacts_path, class: "btn btn-warning"
+#scorecards
+  - if @scorecards.empty?
+    %h3 There are no scorecards to show.
+  - else
+    %table.table.table-hover
+      %h3 Recent Scorecards:
+      %thead
+        %tr
+          %th Game played
+          %th Description
+          %th Posted by
+          %th Actions
+      - @scorecards.each do |scorecard|
+        %tr
+          %td= scorecard.gametype
+          %td= scorecard.description
+          %td= scorecard.user.name
+          %td
+            = link_to scorecard_path(scorecard) do
+              %span.glyphicon.glyphicon-eye-open
+              View Scorecard
+            %br
+            - if scorecard.user == current_user
+              .actions
+                = link_to edit_scorecard_path(scorecard) do
+                  %span.glyphicon.glyphicon-edit
+                  Edit
+                %br
+                = link_to scorecard, method: :delete, data: { confirm: "Are you sure? You can't get it back!" } do
+                  %span.glyphicon.glyphicon-trash
+                  Delete
