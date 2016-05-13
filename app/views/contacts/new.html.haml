@@ -16,8 +16,7 @@
           = f.text_area :message, required: true, class: "form-control", size: "1x3", placeholder: "Leave a comment..."
         .hidden
           = f.input :nickname, hint: 'Leave this field blank!'
-        %div
-          = f.submit 'Send message', class: "btn btn-primary"
+        = f.submit 'Send message', class: "btn btn-primary"
   - else
     .panel.panel-body.text-center
       %br
