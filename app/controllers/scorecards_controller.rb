@@ -22,14 +22,16 @@ class ScorecardsController < ApplicationController
     if @scorecard.save
       redirect_to @scorecard, notice: 'Scorecard was successfully created.'
     else
+      flash.now[:alert] = "Your scorecard could not be updated."
       render :new
     end
   end
 
   def update
-    if @scorecard.update(scorecard_params)
+    if @scorecard.update_attributes(scorecard_params)
       redirect_to @scorecard, notice: 'Scorecard was successfully updated.'
     else
+      flash.now[:alert] = "Your scorecard could not be updated."
       render :edit
     end
   end
@@ -37,7 +39,6 @@ class ScorecardsController < ApplicationController
   def destroy
     @scorecard.destroy
     redirect_to scorecards_url, notice: 'Scorecard deleted.'
-    end
   end
 
   private
@@ -48,9 +49,16 @@ class ScorecardsController < ApplicationController
 
     def correct_user
       @scorecard = current_user.scorecards.find_by(id: params[:id])
-      redirect_to scorecards_path, notice: "Not allowed to edit someone else's Scorecard!" if @scorecard.nil?
+      redirect_to scorecards_path, notice: "Not allowed to change someone else's Scorecard!" if @scorecard.nil?
     end
 
     def scorecard_params
-      params.require(:scorecard).permit(:description, :gametype, :playername, :rounds, :number_of_players, :location)
+      params.require(:scorecard).permit(
+                                        :description,
+                                        :gametype, 
+                                        :playername, 
+                                        :rounds, 
+                                        :number_of_players, 
+                                        :location)
     end
+  end
