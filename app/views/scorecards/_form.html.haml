@@ -1,0 +1,16 @@
+= simple_form_for @scorecard, html: { multipart: true } do |f|
+  - if @scorecard.errors.any?
+    .error_explanation
+      %h2
+        = pluralize(@scorecard.errors.count, "error")
+        stopped this scorecard from being saved:
+      %ul
+        - @scorecard.errors.full_messages.each do |message|
+          %li= message
+  .panel-body
+    .form-group
+      = f.input :gametype, class: "form-control", label: "Game"
+      = f.input :number_of_players, class: "form-control", label: "How many players or teams in this game?", hint: "(Digits only eg: 4)"
+      = f.input :description, class: "form-control", label: "Describe this Scorecard"
+      = f.submit "Save", class: "btn btn-primary"
+      = button_to "Go Back", :back, class: "btn btn-default"
