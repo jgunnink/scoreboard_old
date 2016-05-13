@@ -7,10 +7,12 @@
         %p Body of the Scorecard in here
         %p= @scorecard.playername
       .panel-footer
-          Posted by:
-          %strong= @scorecard.user.name
-        = link_to edit_scorecard_path(@scorecard) do
-          %span.glyphicon.glyphicon-edit
-          Edit
-        |
+        Posted by:
+        %strong= @scorecard.user.name
+        - if @scorecard.user == current_user
+          %br
+          = link_to edit_scorecard_path(@scorecard) do
+            %span.glyphicon.glyphicon-edit
+            Edit
+            |
         = link_to 'Go Back', scorecards_path
