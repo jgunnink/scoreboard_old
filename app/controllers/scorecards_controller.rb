@@ -7,14 +7,8 @@ class ScorecardsController < ApplicationController
     @scorecards = Scorecard.all.order(created_at: :desc)
   end
 
-  def show
-  end
-
   def new
     @scorecard = current_user.scorecards.build
-  end
-
-  def edit
   end
 
   def create
